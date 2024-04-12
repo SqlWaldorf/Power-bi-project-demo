@@ -1,0 +1,5 @@
+EVALUATE  {sum(FactInternetSales[OrderQuantity])}
+
+DEFINE MEASURE FactInternetSales[nearly lunchtime] = min(FactInternetSales[OrderQuantity])
+EVALUATE SUMMARIZECOLUMNS(DimProduct[Color] , "sales", [nearly lunchtime])
+
